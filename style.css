@@ -697,6 +697,10 @@ nav .fa-solid {
   margin-right: 16px;
  }
 
+ .row {
+  display: block;
+ }
+
  .contact-left,
  .contact-right {
   flex-basis: 100%;
