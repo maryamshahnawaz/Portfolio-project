@@ -17,3 +17,24 @@ const getPhotos = () => {
    displayPhotos(jsonData);
   });
 }
+
+const displayPhotos = (dataFromApi) => {
+ // Query the document to get the UL where we will be putting our photos:
+ console.log(dataFromApi);
+ const ulElement = document.querySelector(`.gallery`);
+
+ dataFromApi.forEach((photoObject) => {
+
+  const newLi = document.createElement(`li`);
+
+  const imgElement = document.createElement(`img`);
+  imgElement.src = photoObject.urls.regular;
+  imgElement.alt = photoObject.alt_description;
+
+  // Append the image inside the LI, and then the LI inside the UL:
+  newLi.append(imgElement);
+  ulElement.append(newLi);
+ });
+}
+
+getPhotos();
